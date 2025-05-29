@@ -3,8 +3,12 @@ import numpy as np
 # arryy=np.array([0,1,2,3,4,5])
 # print(arryy)
 
+#[0 1 2 3 4 5]
+
 # zeros_array=np.zeros(6)
 # print(zeros_array)
+
+# [0. 0. 0. 0. 0. 0.]
 
 # ones_array=np.ones((2,3))
 # print(ones_array)
@@ -48,19 +52,19 @@ import numpy as np
 # print(aarry.dtype)
 
 
-# calc_array=np.array([2,3,4,5,6])
-# print(calc_array + 2)
-# print(calc_array * 10)
-# print(calc_array  - 2)
-# print(calc_array / 2)
+# # calc_array=np.array([2,3,4,5,6])
+# # print(calc_array + 2)
+# # print(calc_array * 10)
+# # print(calc_array  - 2)
+# # print(calc_array / 2)
 
-# calc_array=np.array([2,3,4,5,6])
-# print(np.sum(calc_array))
-# print(np.mean(calc_array))
-# print(np.min(calc_array))
-# print(np.max(calc_array))
-# print(np.std(calc_array))
-# print(np.var(calc_array))
+# # calc_array=np.array([2,3,4,5,6])
+# # print(np.sum(calc_array))
+# # print(np.mean(calc_array))
+# # print(np.min(calc_array))
+# # print(np.max(calc_array))
+# # print(np.std(calc_array))
+# # print(np.var(calc_array))
 
 # indx_array=np.array([20,30,40,50,60])
 # print(indx_array[0])
@@ -234,8 +238,3 @@ import numpy as np
 # neww=np.nan_to_num(arr2,posinf=100,neginf=-100)
 
 # print(neww)
-
-
-
-
-

@@ -8,22 +8,24 @@ import pandas as pd
 # print(read)
 
 
-# data= {
-#     "Name":['Dev','gupil','piyush'],
-#     "Age":[20,22,14],
+data= {
+    "Name":['Dev','gupil','piyush'],
+    "Age":[20,22,14],
 
 
 
-# }
+}
 
 # dt= pd.DataFrame(data)
-# print(dt)
+# # print(dt)
+
+# print(dt.head(1))
 
 # dt.to_csv("output.csv",index=False)
-# dt.to_excel("output.xlsx")
+# dt.to_excel("output.xlsx") 
 # dt.to_json("output.json")
 
-# read = pd.read_json("sample_Data.json")
+read = pd.read_json("sample_Data.json")
 
 # print("First ten rows")
 # print(read.head(10))
@@ -40,21 +42,21 @@ import pandas as pd
 # print(read.tail())
 
 
-# print("Display The Info")
+print("Display The Info")
 
-# print(read.info())
+print(read.info())
 
-# print("Discripton of Data")
-# print(read.describe())
+print("Discripton of Data")
+print(read.describe())
 
-# data=pd.read_json("sample_Data.json")
-# # print(f'Shape: {data.shape}')
-# print(f'column: {data.columns}')
+data=pd.read_json("sample_Data.json")
+print(f'Shape: {data.shape}')
+print(f'column: {data.columns}')
 
-# print(data['name'])
+print(data['name'])
 
-# coloums= data[["name", "price"]]
-# print(coloums)
+coloums= data[["name", "price"]]
+print(coloums)
 
 
 
@@ -85,7 +87,7 @@ df=pd.DataFrame(data)
 # df['bonus']= df["salary"] * 0.1
 # print(df)
 
-# df.insert(0,"Employ ID", [10,20,30,40,50,60,70,80])
+# df.insert(0,"Employ ID", [10,20,30,40,50,60,70])
 
 # print(df)
 
@@ -102,10 +104,10 @@ df=pd.DataFrame(data)
 # df.drop(columns=["performance_score"], inplace=True)
 # print(df)
 
-# print(df.isnull())
+print(df.isnull())
 
 
-# print(df.isnull().sum())
+print(df.isnull().sum())
 
 # df.dropna(inplace=True)
 
@@ -119,15 +121,15 @@ df=pd.DataFrame(data)
 # print(df)
 
 
-# data1={
+data1={
 
-#     "Time":[1,2,3,4,5],
-#     "Value":[10,None,30,None,50]
+    "Time":[1,2,3,4,5],
+    "Value":[10,None,30,None,50]
 
-# }
+}
 
 
-# df1=pd.DataFrame(data1)
+df1=pd.DataFrame(data1)
 
 # print(df1)
 
@@ -140,9 +142,9 @@ df=pd.DataFrame(data)
 
 
 
-# df.sort_values(by="age",ascending=True,inplace=True)
-# df.sort_values(by=["age","salary"],ascending=[True,True],inplace=True)
-# print(df)
+df.sort_values(by="age",ascending=True,inplace=True)
+df.sort_values(by=["age","salary"],ascending=[True,True],inplace=True)
+print(df)
 
 # avg_salary=df["salary"].mean()
 # print(avg_salary)
@@ -157,42 +159,45 @@ df=pd.DataFrame(data)
 # print(max_salary)
 
 
-# group=df.groupby("age")["salary"].sum()
-# print(group)
+group=df.groupby("age")["salary"].sum()
+print(group)
 
-# group=df.groupby(["age","name"])["salary"].sum()
-# print(group)
-
-
-# df_customers=pd.DataFrame({
-
-#     "id":[1,2,3],
-#     "name":["ramesh","suresh","mukesh"]
-
-# })
+group=df.groupby(["age","name"])["salary"].sum()
+print(group)
 
 
-# df_orders=pd.DataFrame({
+df_customers=pd.DataFrame({
 
-#     "id":[1,2,4],
-#     "orders":[220,129,344]
-    
-# })
+    "id":[1,2,3],
+    "name":["ramesh","suresh","mukesh"]
 
-# df_merge=pd.merge(df_customers,df_orders,on="id",how="inner")
-# # print(df_merge)
+})
 
 
-# df_merge=pd.merge(df_customers,df_orders,on="id",how="outer")
+df_orders=pd.DataFrame({
+
+    "id":[1,2,4],
+    "orders":[220,129,344]
+
+})
+
+
+print("from Here")
+
+df_merge=pd.merge(df_customers,df_orders,on="id",how="inner")
 # print(df_merge)
 
 
-# df_merge=pd.merge(df_customers,df_orders,on="id",how="left")
-# print(df_merge)
+df_merge=pd.merge(df_customers,df_orders,on="id",how="outer")
+print(df_merge)
 
 
-# df_merge=pd.merge(df_customers,df_orders,on="id",how="right")
-# print(df_merge)
+df_merge=pd.merge(df_customers,df_orders,on="id",how="left")
+print(df_merge)
+
+
+df_merge=pd.merge(df_customers,df_orders,on="id",how="right")
+print(df_merge)
 
 
 
@@ -207,15 +212,22 @@ df_region1=pd.DataFrame({
 df_region2=pd.DataFrame({
 
     "id":[1,2,4],
-    "name":["manu","panu","janu"]
-    
-})
+    "name":["manu","panu","janu"]})
 
-# data_conta=pd.concat([df_region1,df_region2],axis=0,ignore_index=True)
 
-# print(data_conta)
+
+data_conta=pd.concat([df_region1,df_region2],axis=0,ignore_index=True)
+
+print(data_conta)
 
 data_conta=pd.concat([df_region1,df_region2],axis=1,ignore_index=True)
 
 print(data_conta)
 
+import pandas as pd
+
+ages = [15, 47, 56, 23, 78, 90]        # Use '=' instead of space
+bins = [12, 30, 70, 95]                # Use '=' instead of '-'
+
+categories = pd.cut(ages, bins)        # Use '=' instead of space
+print(categories)
